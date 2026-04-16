@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+}
+
+:root {
+  --google-blue: #0b57d0;
+  --google-blue-hover: #0842a0;
+  --google-text: #1f1f1f;
+  --google-subtext: #444746;
+  --google-bg: #f0f2f5;
+  --google-border: #747775;
+  --google-border-focus: #0b57d0;
+}
+
+body {
+  background-color: var(--google-bg);
+  color: var(--google-text);
+  font-family: var(--font-sans);
+}
+
+/* Custom styles for the floating label input */
+.google-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.google-input {
+  width: 100%;
+  padding: 15px 18px;
+  font-size: 18px;
+  border: 1px solid var(--google-border);
+  border-radius: 4px;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.google-input:focus {
+  border: 2px solid var(--google-border-focus);
+  padding: 14px 17px; /* Adjust for border thickness change */
+}
+
+.google-label {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  padding: 0 4px;
+  background: white;
+  color: var(--google-subtext);
+  font-size: 18px;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+
+.google-input:focus ~ .google-label,
+.google-input:not(:placeholder-shown) ~ .google-label {
+  top: -10px;
+  left: 12px;
+  font-size: 14px;
+  color: var(--google-blue);
+}
+
+.google-input:not(:focus):not(:placeholder-shown) ~ .google-label {
+  color: var(--google-subtext);
+}
+

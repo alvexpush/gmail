@@ -1,0 +1,5 @@
+{
+  "name": "Google Login Replica",
+  "description": "A pixel-accurate 2-step Google login interface replica with email detection and smooth transitions.",
+  "requestFramePermissions": []
+}
