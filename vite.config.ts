@@ -18,7 +18,7 @@ export default defineConfig(({mode}) => {
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
-      allowedHosts: ['https://gmail-production-b403.up.railway.app'],
+      allowedHosts: ['gmail-production-b403.up.railway.app'],
       hmr: process.env.DISABLE_HMR !== 'true',
     },
   };
